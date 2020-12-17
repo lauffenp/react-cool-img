@@ -100,14 +100,18 @@ const Img: FC<Props> = ({
 
   return (
     <>
-      <img
+      <div
         className={`${className} no-js-${filename}`}
-        src={source}
         crossOrigin={isSrc ? crossOrigin : undefined}
         srcSet={isSrc ? srcSet : undefined}
         sizes={isSrc ? sizes : undefined}
         ref={setRef}
         {...rest}
+        style={{
+          backgroundImage: src,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
       />
       {/* For SEO and JavaScript unavailable */}
       <noscript>
